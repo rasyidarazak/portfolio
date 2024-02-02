@@ -1,9 +1,10 @@
+// Disable Drag Image
 var images = document.querySelectorAll('img');
-
 images.forEach(function(image) {
     image.ondragstart = function() { return false; };
 });
 
+// Pop Over
 [...document.querySelectorAll('[data-bs-toggle="popover"]')]
     .forEach(el => {
     const popover = new bootstrap.Popover(el, {
@@ -14,6 +15,7 @@ images.forEach(function(image) {
     });
 });
 
+// Tonggle Navbar
 function toggleNavbar() {
     var toggler = document.getElementById("navbar-toggler");
     var icon = document.getElementById("navbar-toggler-icon");
@@ -27,6 +29,7 @@ function toggleNavbar() {
     }, 150);
 }
 
+// Parallax Name
 document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         var myName = document.getElementById("my-name");
@@ -45,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 1000);
 });
 
+// Parallax Scroll
 window.addEventListener('scroll', function () {
     var top = document.getElementById('about');
     if (top) {
@@ -71,10 +75,10 @@ window.addEventListener('scroll', function () {
     }
 });
 
+// Email JS
 (function(){
     emailjs.init("uNRyc5EjJmWCr_NFO");
 })();
-
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -102,4 +106,4 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         var myToastFail = new bootstrap.Toast(document.getElementById('myToastFail'));
         myToastFail.show();
     });
- });
+});
